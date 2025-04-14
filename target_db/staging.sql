@@ -160,3 +160,33 @@ CREATE TABLE public.ipos (
     created_at timestamp without time zone DEFAULT CURRENT_TIMESTAMP,
     updated_at timestamp without time zone DEFAULT CURRENT_TIMESTAMP
 );
+
+ALTER TABLE public.ipos OWNER TO postgres;
+
+
+CREATE TABLE public.people(
+    people_id character varying(255) NOT NULL,
+    object_id character varying(255) NOT NULL,
+    first_name character varying(255),
+    last_name character varying(255),
+    birthplace character varying(255),
+    affiliation_name character varying(255),
+    created_at timestamp without time zone DEFAULT CURRENT_TIMESTAMP,
+    updated_at timestamp without time zone DEFAULT CURRENT_TIMESTAMP
+)
+
+ALTER TABLE public.people OWNER TO postgres;
+
+CREATE TABLE public.relationships(
+    relationship_id character varying(255) NOT NULL,
+    person_object_id character varying(255) NOT NULL,
+    relationship_object_id character varying(255),
+    start_at date,
+    end_at date,
+    is_past boolean,
+    sequence integer,
+    title text,
+    created_at timestamp without time zone DEFAULT CURRENT_TIMESTAMP,
+    updated_at timestamp without time zone DEFAULT CURRENT_TIMESTAMP
+)
+
