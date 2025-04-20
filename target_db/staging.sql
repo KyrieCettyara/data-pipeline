@@ -44,9 +44,9 @@ CREATE TABLE public.acquisition (
     source_url text,
     source_description text,
     created_at timestamp without time zone DEFAULT CURRENT_TIMESTAMP,
-    updated_at timestamp without time zone DEFAULT CURRENT_TIMESTAMP
+    updated_at timestamp without time zone DEFAULT CURRENT_TIMESTAMP,
+    CONSTRAINT pk_acquisition UNIQUE (acquisition_id)
 );
-
 
 ALTER TABLE public.acquisition OWNER TO postgres;
 
@@ -68,9 +68,9 @@ CREATE TABLE public.company (
     latitude numeric(9,6),
     longitude numeric(9,6),
     created_at timestamp without time zone DEFAULT CURRENT_TIMESTAMP,
-    updated_at timestamp without time zone DEFAULT CURRENT_TIMESTAMP
+    updated_at timestamp without time zone DEFAULT CURRENT_TIMESTAMP,
+    CONSTRAINT pk_company UNIQUE (office_id)
 );
-
 
 ALTER TABLE public.company OWNER TO postgres;
 
@@ -100,9 +100,9 @@ CREATE TABLE public.funding_rounds (
     source_description text,
     created_by character varying(255),
     created_at timestamp without time zone DEFAULT CURRENT_TIMESTAMP,
-    updated_at timestamp without time zone DEFAULT CURRENT_TIMESTAMP
+    updated_at timestamp without time zone DEFAULT CURRENT_TIMESTAMP,
+    CONSTRAINT pk_funding_rounds UNIQUE (funding_round_id)
 );
-
 
 ALTER TABLE public.funding_rounds OWNER TO postgres;
 
@@ -120,9 +120,9 @@ CREATE TABLE public.funds (
     source_url text,
     source_description text,
     created_at timestamp without time zone DEFAULT CURRENT_TIMESTAMP,
-    updated_at timestamp without time zone DEFAULT CURRENT_TIMESTAMP
+    updated_at timestamp without time zone DEFAULT CURRENT_TIMESTAMP,
+    CONSTRAINT pk_funds UNIQUE (fund_id)
 );
-
 
 ALTER TABLE public.funds OWNER TO postgres;
 
@@ -136,9 +136,9 @@ CREATE TABLE public.investments (
     funded_object_id character varying,
     investor_object_id character varying,
     created_at timestamp without time zone DEFAULT CURRENT_TIMESTAMP,
-    updated_at timestamp without time zone DEFAULT CURRENT_TIMESTAMP
+    updated_at timestamp without time zone DEFAULT CURRENT_TIMESTAMP,
+    CONSTRAINT pk_investments UNIQUE (investment_id)
 );
-
 
 ALTER TABLE public.investments OWNER TO postgres;
 
@@ -158,7 +158,8 @@ CREATE TABLE public.ipos (
     source_url text,
     source_description text,
     created_at timestamp without time zone DEFAULT CURRENT_TIMESTAMP,
-    updated_at timestamp without time zone DEFAULT CURRENT_TIMESTAMP
+    updated_at timestamp without time zone DEFAULT CURRENT_TIMESTAMP,
+    CONSTRAINT pk_ipos UNIQUE (ipo_id)
 );
 
 ALTER TABLE public.ipos OWNER TO postgres;
@@ -172,8 +173,9 @@ CREATE TABLE public.people(
     birthplace character varying(255),
     affiliation_name character varying(255),
     created_at timestamp without time zone DEFAULT CURRENT_TIMESTAMP,
-    updated_at timestamp without time zone DEFAULT CURRENT_TIMESTAMP
-)
+    updated_at timestamp without time zone DEFAULT CURRENT_TIMESTAMP,
+    CONSTRAINT pk_people UNIQUE (people_id)
+);
 
 ALTER TABLE public.people OWNER TO postgres;
 
@@ -187,6 +189,10 @@ CREATE TABLE public.relationships(
     sequence integer,
     title text,
     created_at timestamp without time zone DEFAULT CURRENT_TIMESTAMP,
-    updated_at timestamp without time zone DEFAULT CURRENT_TIMESTAMP
-)
+    updated_at timestamp without time zone DEFAULT CURRENT_TIMESTAMP,
+    CONSTRAINT pk_relationships UNIQUE (relationship_id)
+);
+
+ALTER TABLE public.people OWNER TO postgres;
+
 

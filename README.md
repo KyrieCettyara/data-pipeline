@@ -1,5 +1,3 @@
-# Live Class Week 6
-
 ## Description
 Startup ecosystem dikenal dengan pertumbuhan yang pesat dan  aktivitas yang beragam. Dalam ekosistem ini, sejumlah besar data dihasilkan, mencerminkan aktivitas dari perusahaan, investasi yang mereka terima, dan tokoh-tokoh utama yang terkait dengan mereka. Data ini sangat penting untuk memahami dinamika pasar, mengidentifikasi tren, dan membuat keputusan yang tepat
 
@@ -47,4 +45,16 @@ report_company = complany_profiling.reporting()
 
 Hasil dari profiling kemudian disimpan kedalam MinIO
 
-![alt text](https://github.com/KyrieCettyara/data-storage-project/blob/main/image/image1.png)
+![alt text](https://github.com/KyrieCettyara/data-pipeline/blob/main/image/image1.png)
+
+Sample profiling
+
+![alt text](https://github.com/KyrieCettyara/data-pipeline/blob/main/image/profiling_result.png)
+
+## Design Pipeline
+Pipeline akan melakukan extract data dari data source database dan file excel. Raw data yang telah berhasil diextract kemudian di load kedalam satu database staging. Data yang ada dalam database staging kemudian diextract kemudian dilakukan transform dan kemudian diload kedalam database warehouse. Dari setiap proses extract, load, dan transform akan dilakukan logging yang akan disimpan didalam database log.
+
+![alt text](https://github.com/KyrieCettyara/data-pipeline/blob/main/image/Startup_Investment_DB.png)
+
+
+

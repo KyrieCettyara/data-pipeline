@@ -10,7 +10,7 @@ from utils.db_conn import db_connection
 def extract_list_table(db_name):
     try:
         # Define db connection engine
-        src_engine = db_connection()
+        src_engine,_ = db_connection()
         
         # Get list of tables in the database
         query = "SELECT table_name FROM information_schema.tables WHERE table_schema = 'public'"
