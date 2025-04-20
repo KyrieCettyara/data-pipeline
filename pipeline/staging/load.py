@@ -27,7 +27,10 @@ def load_staging(table_name: str, idx_name:str, source):
                 table_name = table_name,
                 schema = "public",
                 if_row_exists = "update")
-        
+
+        # Delete temporary file
+        os.remove(f"{temp_file}/{table_name}.csv")
+            
         #create success log message
         log_msg = {
                 "step" : "staging",
