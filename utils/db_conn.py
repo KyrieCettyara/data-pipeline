@@ -39,14 +39,25 @@ def db_connection():
         print(f"Error: {e}")
         return None
     
-def dwh_engine():
-    dwh_database = os.getenv("DWH_POSTGRES_DB")
-    dwh_host = os.getenv("DWH_POSTGRES_HOST")
-    dwh_user = os.getenv("DWH_POSTGRES_USER")
-    dwh_password = os.getenv("DWH_POSTGRES_PASSWORD")
-    dwh_port = os.getenv("DWH_POSTGRES_PORT")
+def dwh_connection():
+    try:
+        dwh_database = os.getenv("DWH_POSTGRES_DB")
+        dwh_host = os.getenv("DWH_POSTGRES_HOST")
+        dwh_user = os.getenv("DWH_POSTGRES_USER")
+        dwh_password = os.getenv("DWH_POSTGRES_PASSWORD")
+        dwh_port = os.getenv("DWH_POSTGRES_PORT")
+        
+        dwh_conn = f'postgresql://{dwh_user}:{dwh_password}@{dwh_host}:{dwh_port}/{dwh_database}'
+        
+        dwh_engine = create_engine(dwh_conn)
+        
+        return dwh_engine
+           
 
-    return create_engine(f"postgresql://{dwh_user}:{dwh_password}@{dwh_host}/{dwh_database}")
+    except Exception as e:
+        print(f"Error: {e}")
+        return None
+
     
 def read_sql(PATH, table_name):
     #open your file .sql

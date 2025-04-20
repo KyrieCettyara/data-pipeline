@@ -46,4 +46,7 @@ for index, file_name in enumerate(excel_to_extract):
 
 ##load to staging db
 for index, table_name in enumerate(extract_data):
-    load_staging(table_name= table_name, idx_name=table_id[index], source='startup investment')    
+    load_staging(table_name= table_name, idx_name=table_id[index], source='startup investment')
+
+
+    

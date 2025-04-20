@@ -21,13 +21,13 @@ services:
     container_name: target_db_container
     restart: on-failure
     environment:
-      - POSTGRES_DB=warehouse
       - POSTGRES_USER=postgres
       - POSTGRES_PASSWORD=cobapassword
     volumes:
       - ./target_db/init.sql:/docker-entrypoint-initdb.d/01-init.sql
       - ./target_db/etl_log.sql:/docker-entrypoint-initdb.d/02-etl_log.sql
       - ./target_db/staging.sql:/docker-entrypoint-initdb.d/03-staging.sql
+      - ./target_db/warehouse.sql:/docker-entrypoint-initdb.d/04-dwh.sql
     ports:
       - 5435:5432 
     networks:

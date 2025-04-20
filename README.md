@@ -56,6 +56,10 @@ Pipeline akan melakukan extract data dari data source database dan file excel. R
 
 ![alt text](https://github.com/KyrieCettyara/data-pipeline/blob/main/image/Startup_Investment_DB.png)
 
+berikut merupakan diagram dari datawarehouse
+![alt text](https://github.com/KyrieCettyara/data-pipeline/blob/main/image/Diagram.png)
+
+
 
 ### Database Staging
 Data dari source data disimpan kedalam database staging
@@ -68,5 +72,9 @@ Log dari proses extract, load, dan transform disimpan didalam database log.
 
 ![alt text](https://github.com/KyrieCettyara/data-pipeline/blob/main/image/log_table.png)
 
+### Database Warehouse
+Data yang ada pada table staging akan kemabali di extract kemudian dilakukan transform yang kemudian akan dilakukan load ke dalam database warehouse
+
+![alt text](https://github.com/KyrieCettyara/data-pipeline/blob/main/image/datawarehouse.png)
 
 
