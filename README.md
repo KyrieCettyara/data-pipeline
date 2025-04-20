@@ -52,9 +52,21 @@ Sample profiling
 ![alt text](https://github.com/KyrieCettyara/data-pipeline/blob/main/image/profiling_result.png)
 
 ## Design Pipeline
-Pipeline akan melakukan extract data dari data source database dan file excel. Raw data yang telah berhasil diextract kemudian di load kedalam satu database staging. Data yang ada dalam database staging kemudian diextract kemudian dilakukan transform dan kemudian diload kedalam database warehouse. Dari setiap proses extract, load, dan transform akan dilakukan logging yang akan disimpan didalam database log.
+Pipeline akan melakukan extract data dari data source database dan file excel. Raw data yang telah berhasil diextract kemudian di load kedalam satu database staging. Data yang ada dalam database staging kemudian diextract kemudian dilakukan transform dan diload kedalam database warehouse. Dari setiap proses extract, load, dan transform akan dilakukan logging yang akan disimpan didalam database log.
 
 ![alt text](https://github.com/KyrieCettyara/data-pipeline/blob/main/image/Startup_Investment_DB.png)
+
+
+### Database Staging
+Data dari source data disimpan kedalam database staging
+
+![alt text](https://github.com/KyrieCettyara/data-pipeline/blob/main/image/staging_table.png)
+
+
+### Database Log
+Log dari proses extract, load, dan transform disimpan didalam database log.
+
+![alt text](https://github.com/KyrieCettyara/data-pipeline/blob/main/image/log_table.png)
 
 
 
